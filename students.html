@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>NHS Staff Feedback Form</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  </head>
+  <h1 class="display-1 text-center">
+    NHS Staff Feedback Form
+    </h1>
+  <h2 class="display-4 text-center">
+    2019-2020
+  </h2>
+  <body>
+    <div class="container" id="kids">
+
+      </div>
+      <div class="student" style="display:none;">
+        <br><br><br>
+        <h2 class="name text-center">Student Name</h2>
+        <h6>The above student is eligible for NHS based on his/her...</h6>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <label class="input-group-text" for="inputGroupSelect01">CHARACTER</label>
+          </div>
+          <select class="custom-select character_select" id="inputGroupSelect01">
+            <option selected>Choose...</option>
+            <option value="1">Yes</option>
+            <option value="2">No</option>
+            <option value="3">Not Applicable/Demonstrated</option>
+          </select>
+        </div>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <label class="input-group-text" for="inputGroupSelect01">LEADERSHIP</label>
+          </div>
+          <select class="custom-select leadership_select" id="inputGroupSelect01">
+            <option selected>Choose...</option>
+            <option value="1">Yes</option>
+            <option value="2">No</option>
+            <option value="3">Not Applicable/Demonstrated</option>
+          </select>
+        </div>
+        <textarea class="comments_field" rows="4" cols="50" placeholder="Comments (Optional)"></textarea>
+        <br>
+        <br>
+        <br>
+      </div>
+    </div>
+    <div class="container">
+      <button type="button" class="btn btn-success btn-lg btn-block">Submit</button>
+    <div>
+    <script src="script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>
