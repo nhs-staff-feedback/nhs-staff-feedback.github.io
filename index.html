@@ -7,15 +7,15 @@
     <link href="style.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   </head>
-  <h1 class="display-1 text-center">
-    NHS Staff Feedback Form
-    </h1>
-  <h2 class="display-4 text-center">
-    2019-2020
-  </h2>
   <body>
     <div class="container" id="kids">
       <div>
+        <h1 class="display-1 text-center">
+          NHS Staff Feedback Form
+        </h1>
+        <h2 class="display-4 text-center">
+          2019-2020
+        </h2>
       Attached below you will find a checklist of students eligible for National Honor Society.
 <br>
 Your honest appraisal of our candidates is invaluable because you are able to observe them in a variety of situations.  For this reason, we are asking that you simply check 'recommend', 'not recommend' or 'not applicable' on this form. You can choose to abstain from a given category if you choose.  Feel free to add comments as needed.  Please keep in mind that no single application will, by itself,  cause a student to be denied or granted membership.  Please be as candid as you can. Your recommendations are held in strict confidence.  
@@ -56,23 +56,62 @@ Thank you so much for your time and input.
 <br>
 <br>
 
-<div class="input-group mb-3">
-  <div class="input-group-prepend">
-    <span class="input-group-text" id="basic-addon1">Your First Name</span>
-  </div>
-  <input type="text" class="form-control" placeholder="First Name" aria-label="First Name" aria-describedby="basic-addon1">
+<h4 class="text-center">We have to make sure you are a staff member. The button below will prompt you to sign in with Google. Please sign in with your @sbschools.org acount.</h4>
+
+<br>
+
+<button type="button" class="btn btn-success btn-lg btn-block" onClick="signIn()">Go to form!</button><br>
+</div>
 </div>
 
-<div class="input-group mb-3">
-  <div class="input-group-prepend">
-    <span class="input-group-text" id="basic-addon1">Your Last Name</span>
-  </div>
-  <input type="text" class="form-control" placeholder="Last Name" aria-label="Last Name" aria-describedby="basic-addon1">
-</div>
+<script src="https://www.gstatic.com/firebasejs/7.6.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.6.0/firebase-auth.js"></script>
+<script>
+    // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyCUF6rTeOBWlBBFp_iIPNorx12bTxCzUtw",
+    authDomain: "nhs-staff-feedback.firebaseapp.com",
+    databaseURL: "https://nhs-staff-feedback.firebaseio.com",
+    projectId: "nhs-staff-feedback",
+    storageBucket: "nhs-staff-feedback.appspot.com",
+    messagingSenderId: "380180797255",
+    appId: "1:380180797255:web:894326902d0d9495f49e62"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
 
-<a type="button" class="btn btn-success btn-lg btn-block" href="./students.html">Go to form!</a><br>
-</div>
-</div>
+
+var provider = new firebase.auth.GoogleAuthProvider();
+
+function signIn(){
+  firebase.auth().signInWithRedirect(provider)
+}
+
+firebase.auth().getRedirectResult().then(function(result) {
+  if (result.credential) {
+        var token = result.credential.accessToken;
+        console.log(result.user)
+    console.log(result.user.email)
+    if(result.user.email.includes("@sbschools.org"))
+      window.location = "./students.html"
+    else
+      firebase.auth().signOut().then(()=>alert("Please sign in with your staff account"))
+  }
+  // The signed-in user info.
+  var user = result.user;
+}).catch(function(error) {
+  // Handle Errors here.
+  var errorCode = error.code;
+  var errorMessage = error.message;
+  var email = error.email; 
+  var credential = error.credential;
+  // ...
+});
+
+
+
+
+  </script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>

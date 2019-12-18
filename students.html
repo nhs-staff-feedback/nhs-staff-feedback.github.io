@@ -14,12 +14,16 @@
     2019-2020
   </h2>
   <body>
+    <div class="container">
+      <a class="text-center" href="#seniorsStarting">Jump to Seniors</a>
+    </div>
     <div class="container" id="kids">
 
       </div>
       <div class="student" style="display:none;">
         <br><br><br>
         <h2 class="name text-center">Student Name</h2>
+        <h6 class="id text-center">100123456</h6>
         <h6>The above student is eligible for NHS based on his/her...</h6>
         <div class="input-group mb-3">
           <div class="input-group-prepend">
@@ -27,9 +31,9 @@
           </div>
           <select class="custom-select character_select" id="inputGroupSelect01">
             <option selected>Choose...</option>
-            <option value="1">Yes</option>
-            <option value="2">No</option>
-            <option value="3">Not Applicable/Demonstrated</option>
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+            <option value="N/A">Not Applicable/Demonstrated</option>
           </select>
         </div>
         <div class="input-group mb-3">
@@ -38,20 +42,53 @@
           </div>
           <select class="custom-select leadership_select" id="inputGroupSelect01">
             <option selected>Choose...</option>
-            <option value="1">Yes</option>
-            <option value="2">No</option>
-            <option value="3">Not Applicable/Demonstrated</option>
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+            <option value="N/A">Not Applicable/Demonstrated</option>
           </select>
         </div>
-        <textarea class="comments_field" rows="4" cols="50" placeholder="Comments (Optional)"></textarea>
+        <textarea style="width:100%;border-radius:3px" class="comments_field" rows="4" cols="50" placeholder="Comments (Optional)"></textarea>
         <br>
         <br>
         <br>
       </div>
     </div>
+
+    <div class="jumbotron jumbotron-fluid" id="seniorsStarting">
+      <div class="container">
+        <h1 class="display-4">Seniors</h1>
+        <p class="lead">The list of seniors starts here</p>
+      </div>
+    </div>
+
+
+    <div class="container" id="seniors">
+    </div>
     <div class="container">
       <button type="button" class="btn btn-success btn-lg btn-block">Submit</button>
     <div>
+      <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.6.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.6.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.6.0/firebase-database.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+        https://firebase.google.com/docs/web/setup#available-libraries -->
+
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyCUF6rTeOBWlBBFp_iIPNorx12bTxCzUtw",
+        authDomain: "nhs-staff-feedback.firebaseapp.com",
+        databaseURL: "https://nhs-staff-feedback.firebaseio.com",
+        projectId: "nhs-staff-feedback",
+        storageBucket: "nhs-staff-feedback.appspot.com",
+        messagingSenderId: "380180797255",
+        appId: "1:380180797255:web:34e99898d03adef0f49e62"
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+    </script>
     <script src="script.js"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
