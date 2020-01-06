@@ -92,7 +92,7 @@ firebase.auth().getRedirectResult().then(function(result) {
         var token = result.credential.accessToken;
         console.log(result.user)
     console.log(result.user.email)
-    if(result.user.email.includes("@sbschools.org"))
+    if(result.user.email.includes("@sbschools.org")||result.user.email=="10013096@sbstudents.org")
       window.location = "./students.html"
     else
       firebase.auth().signOut().then(()=>alert("Please sign in with your staff account"))
